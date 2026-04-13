@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="Prompt Engineer">
+  <rect x="8" y="8" width="112" height="112" rx="20" fill="#121a2f"/>
+  <rect x="24" y="26" width="80" height="56" rx="10" fill="#1d2946"/>
+  <path d="M38 46h52M38 58h40" stroke="#8ab4ff" stroke-width="6" stroke-linecap="round"/>
+  <circle cx="46" cy="96" r="8" fill="#34d399"/>
+  <circle cx="64" cy="96" r="8" fill="#60a5fa"/>
+  <circle cx="82" cy="96" r="8" fill="#f59e0b"/>
+</svg>
