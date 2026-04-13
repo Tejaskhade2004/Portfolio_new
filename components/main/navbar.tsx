@@ -9,9 +9,9 @@ export const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    <div className="w-full h-[65px] fixed top-0 shadow-lg shadow-[#2A0E61]/50 bg-[#03001427] backdrop-blur-md z-50 px-10">
+    <div className="fixed top-0 z-50 h-[65px] w-full bg-[#03001427] px-4 shadow-lg shadow-[#2A0E61]/50 backdrop-blur-md sm:px-6 lg:px-10">
       {/* Navbar Container */}
-      <div className="w-full h-full flex items-center justify-between m-auto px-[10px]">
+      <div className="m-auto flex h-full w-full items-center justify-between px-[6px] sm:px-[10px]">
         {/* Logo + Name */}
         <Link
           href="#about-me"
@@ -20,10 +20,10 @@ export const Navbar = () => {
           <Image
             src="/logo.png"
             alt="Logo"
-            width={70}
-            height={70}
+            width={56}
+            height={56}
             draggable={false}
-            className="cursor-pointer"
+            className="h-14 w-14 cursor-pointer select-none sm:h-[64px] sm:w-[64px]"
           />
           <div className="hidden md:flex font-bold ml-[10px] text-gray-300">
             {PROFILE.name}
@@ -31,8 +31,8 @@ export const Navbar = () => {
         </Link>
 
         {/* Web Navbar */}
-        <div className="hidden md:flex w-[500px] h-full flex-row items-center justify-between md:mr-20">
-          <div className="flex items-center justify-between w-full h-auto border-[rgba(112,66,248,0.38)] bg-[rgba(3,0,20,0.37)] mr-[15px] px-[20px] py-[10px] rounded-full text-gray-200">
+        <div className="hidden h-full flex-row items-center justify-between md:mr-6 md:flex md:w-[460px] lg:mr-20 lg:w-[500px]">
+          <div className="mr-[15px] flex h-auto w-full items-center justify-between rounded-full border-[rgba(112,66,248,0.38)] bg-[rgba(3,0,20,0.37)] px-[20px] py-[10px] text-gray-200">
             {NAV_LINKS.map((link) => (
               <Link
                 key={link.title}
@@ -71,8 +71,10 @@ export const Navbar = () => {
 
         {/* Hamburger Menu */}
         <button
-          className="md:hidden text-white focus:outline-none text-4xl"
+          className="text-3xl text-white focus:outline-none md:hidden"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          aria-label="Toggle menu"
+          aria-expanded={isMobileMenuOpen}
         >
           ☰
         </button>
@@ -80,14 +82,14 @@ export const Navbar = () => {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="absolute top-[65px] left-0 w-full bg-[#030014] p-5 flex flex-col items-center text-gray-300 md:hidden">
+        <div className="absolute left-0 top-[65px] w-full border-t border-white/10 bg-[#030014] p-5 text-gray-300 shadow-xl md:hidden">
           {/* Links */}
           <div className="flex flex-col items-center gap-4">
             {NAV_LINKS.map((link) => (
               <Link
                 key={link.title}
                 href={link.link}
-                className="cursor-pointer hover:text-[rgb(112,66,248)] transition text-center"
+                className="w-full rounded-lg px-4 py-2 text-center text-base transition hover:bg-white/5 hover:text-[rgb(112,66,248)]"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 {link.title}
@@ -97,7 +99,7 @@ export const Navbar = () => {
               href={LINKS.sourceCode}
               target="_blank"
               rel="noreferrer noopener"
-              className="cursor-pointer hover:text-[rgb(112,66,248)] transition text-center"
+              className="w-full rounded-lg px-4 py-2 text-center text-base transition hover:bg-white/5 hover:text-[rgb(112,66,248)]"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               Source Code

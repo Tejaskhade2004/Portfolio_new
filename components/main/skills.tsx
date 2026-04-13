@@ -23,16 +23,15 @@ export const Skills = () => {
   return (
     <section
       id="skills"
-      style={{ transform: "scale(0.9)" }}
-      className="flex flex-col items-center justify-center gap-3 h-full relative overflow-hidden py-20"
+      className="relative flex h-full flex-col items-center justify-center gap-3 overflow-hidden px-2 py-14 md:py-20"
     >
       <SkillText />
 
-      <div className="mt-4 flex w-full flex-col items-center gap-5 px-6">
+      <div className="mt-4 flex w-full max-w-7xl flex-col items-center gap-4 px-3 sm:gap-5 sm:px-6">
         {skillRows.map((row, rowIndex) => (
           <div
             key={`skills-row-${rowIndex}`}
-            className="flex w-full flex-row flex-wrap items-center justify-center gap-5"
+            className="flex w-full flex-row flex-wrap items-center justify-center gap-3 sm:gap-5"
           >
             {row.skills.map((skill, i) => (
               <SkillDataProvider
